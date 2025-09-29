@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CGPA to Percentage Converter - Free Tool</title>
+  <meta name="description" content="Convert CGPA to Percentage easily with this free online tool. Based on standard multiplier 9.5. CGPA calculator for students.">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background: #f7f9fc;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .container {
+      background: white;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #27ae60;
+    }
+    .faq {
+      text-align: left;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .faq h3 {
+      font-size: 16px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>CGPA to Percentage Converter</h1>
+    <p>Enter your CGPA below 👇</p>
+
+    <input type="number" id="cgpa" placeholder="Enter CGPA (e.g. 8.2)" step="0.01" min="0" max="10">
+    <br>
+    <button onclick="convert()">Convert</button>
+
+    <div class="result" id="result"></div>
+
+    <div class="faq">
+      <h3>FAQ:</h3>
+      <p><b>Q1:</b> Formula kya hai?<br>
+      <b>Ans:</b> Percentage = CGPA × 9.5</p>
+
+      <p><b>Q2:</b> Ye kis board ke liye valid hai?<br>
+      <b>Ans:</b> Ye CBSE aur jyadatar universities ke liye use hota hai.</p>
+
+      <p><b>Q3:</b> Agar CGPA 10 ho to percentage kitna?<br>
+      <b>Ans:</b> 10 × 9.5 = 95%</p>
+    </div>
+  </div>
+
+  <script>
+    function convert() {
+      let cgpa = document.getElementById("cgpa").value;
+      if(cgpa === "" || cgpa < 0 || cgpa > 10){
+        document.getElementById("result").innerHTML = "⚠️ Please enter valid CGPA (0 - 10)";
+      } else {
+        let percentage = (cgpa * 9.5).toFixed(2);
+        document.getElementById("result").innerHTML = "✅ Your Percentage: " + percentage + "%";
+      }
+    }
+  </script>
+
+</body>
+</html>
