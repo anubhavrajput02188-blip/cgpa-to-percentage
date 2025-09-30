@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anubhavrajput02188-blip.github.io/cgpa-to-percentage/sitemap.xml
